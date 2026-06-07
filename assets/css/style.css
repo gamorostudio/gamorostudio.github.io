@@ -1,843 +1,299 @@
-/* 
----------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
-
-/* 
----------------------------------------------
-reset
---------------------------------------------- 
-*/
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
-s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-figure, header, nav, section, article, aside, footer, figcaption {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-}
-
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-html[xmlns] .clearfix {
-  display: block;
-}
-
-* html .clearfix {
-  height: 1%;
-}
-
-ul, li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-header, nav, section, article, aside, footer, hgroup {
-  display: block;
-}
-
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  background-color: #1e1e1e;
-  font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-	color: #CCC;
-  text-decoration: none !important;
-}
-a:hover {
-	color: #F99;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: #fff;
-  font-weight: 700;
-}
-
-ul {
-  margin-bottom: 0px;
-}
-
-p {
-  font-size: 15px;
-  line-height: 30px;
-  color: #fff;
-}
-
-img {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* 
----------------------------------------------
-Global Styles
---------------------------------------------- 
-*/
-
-html,
 body {
-  background: #1f2122;
-  font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-body .page-content {
-  margin-top: 110px;
-  background-color: #27292a;
-  padding: 60px;
-  border-radius: 23px;
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-p {
-  font-size: 15px;
-  color: #666;
-  line-height: 30px;
-  margin-bottom: 0px;
+/* HEADER & LOGO CONFIGURATION */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
 }
 
-::selection {
-  background: #e75e8d;
-  color: #fff;
+.brand-logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
 }
 
-::-moz-selection {
-  background: #e75e8d;
-  color: #fff;
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: #ff3333;
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+    text-transform: uppercase;
 }
 
-.border-no-active a {
-  border-color: #666;
-  color: #666;
+header p {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 10px;
 }
 
-.border-no-active a:hover{
-  border-color: #666;
-  color: #666;
-  background-color: transparent;
+/* Navigasi Utama */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-section {
-  margin-top: 120px;
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
-.heading-section h4 {
-  color: #ec6090;
-  font-size: 34px;
-  text-decoration: none;
-  margin-bottom: 30px;
-  text-align: center;
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #fff;
 }
 
-.heading-section h4 em {
-  color: #fff;
-  font-style: normal;
-  text-decoration: underline;
-}
-
-/* 
----------------------------------------------
-Pre-loader Style
---------------------------------------------- 
-*/
-
-.js-preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.99);
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  z-index: 9999;
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-}
-
-.js-preloader.loaded {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-@-webkit-keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@-webkit-keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-@keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-.preloader-inner {
-  position: relative;
-  width: 142px;
-  height: 40px;
-  background: transparent;
-}
-
-.preloader-inner .dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 12px;
-  left: 15px;
-  background: #e75e8d;
-  border-radius: 50%;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-animation: dot 2.8s infinite;
-  animation: dot 2.8s infinite;
-}
-
-.preloader-inner .dots {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  margin-top: 12px;
-  margin-left: 31px;
-  -webkit-animation: dots 2.8s infinite;
-  animation: dots 2.8s infinite;
-}
-
-.preloader-inner .dots span {
-  display: block;
-  float: left;
-  width: 16px;
-  height: 16px;
-  margin-left: 16px;
-  background: #e75e8d;
-  border-radius: 50%;
-}
-
-/* 
----------------------------------------------
-Header Style
---------------------------------------------- 
-*/
-
-.header-area {
-  background-color: transparent;
-  position: absolute;
-  height: 70px;
-  top: 15px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  -webkit-transition: all .5s ease 0s;
-  -moz-transition: all .5s ease 0s;
-  -o-transition: all .5s ease 0s;
-  transition: all .5s ease 0s;
-}
-
-.header-area .main-nav {
-  min-height: 80px;
-  background: transparent;
-  display: flex;
-  padding: 15px 0px;
-  border-radius: 50px;
-}
-
-.header-area .main-nav #search {
-  position: relative;
-}
-
-.header-area .main-nav #search input {
-  background-color: #27292a;
-  height: 46px;
-  border-radius: 23px;
-  border: none;
-  color: #666;
-  font-size: 14px;
-  padding: 0px 15px 0px 45px;
-}
-
-.header-area .main-nav #search i {
-  position: absolute;
-  color: #666;
-  left: 20px;
-  top: 16px;
-  width: 18px;
-  height: 18px;
-  font-size: 16px;
-}
-
-.header-area .main-nav .logo {
-  border-right: 1px solid #27292a;
-  flex-basis: 25%;
-  margin-right: 5%;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.header-area .main-nav .logo img {
-  width: 191px;
-}
-
-.header-area .main-nav .nav {
-  display: inline-flex;
-  flex-basis: 70%;
-  justify-content: flex-end;
-  vertical-align: middle;
-  text-align: right;
-  margin-top: 0px;
-  margin-right: 0px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  position: relative;
-  z-index: 999;
-}
-
-.header-area .main-nav .nav li {
-  padding-left: 10px;
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.header-area .main-nav .nav li a {
-  display: block;
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: capitalize;
-  color: #fff;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  border: transparent;
-  padding: 13px 10px;
-  border-radius: 18px;
-  letter-spacing: .3px;
-}
-
-.header-area .main-nav .nav li:hover a,
-.header-area .main-nav .nav li a.active {
-  color: #e75e8d !important;
-}
-
-.header-area .main-nav .nav li.has-sub {
-  position: relative;
-  padding-right: 15px;
-}
-
-.header-area .main-nav .menu-trigger {
-  cursor: pointer;
-  display: block;
-  position: absolute;
-  top: 23px;
-  width: 32px;
-  height: 40px;
-  text-indent: -9999em;
-  z-index: 99;
-  right: 20px;
-  display: none;
-}
-
-.header-area .main-nav .menu-trigger span,
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  background-color: #e75e8d;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  left: 0;
-}
-
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  background-color: #e75e8d;
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  left: 0;
-  width: 75%;
-}
-
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  content: "";
-}
-
-.header-area .main-nav .menu-trigger span {
-  top: 16px;
-}
-
-.header-area .main-nav .menu-trigger span:before {
-  -moz-transform-origin: 33% 100%;
-  -ms-transform-origin: 33% 100%;
-  -webkit-transform-origin: 33% 100%;
-  transform-origin: 33% 100%;
-  top: -10px;
-  z-index: 10;
-}
-
-.header-area .main-nav .menu-trigger span:after {
-  -moz-transform-origin: 33% 0;
-  -ms-transform-origin: 33% 0;
-  -webkit-transform-origin: 33% 0;
-  transform-origin: 33% 0;
-  top: 10px;
-}
-
-.header-area .main-nav .menu-trigger.active span,
-.header-area .main-nav .menu-trigger.active span:before,
-.header-area .main-nav .menu-trigger.active span:after {
-  background-color: transparent;
-  width: 100%;
-}
-
-.header-area .main-nav .menu-trigger.active span:before {
-  -moz-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -ms-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -webkit-transform: translateY(6px) translateX(1px) rotate(45deg);
-  transform: translateY(6px) translateX(1px) rotate(45deg);
-  background-color: #e75e8d;
-}
-
-.header-area .main-nav .menu-trigger.active span:after {
-  -moz-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -ms-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -webkit-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  background-color: #e75e8d;
-}
-
-.header-area.header-sticky {
-  min-height: 70px;
-}
-
-.header-area.header-sticky .nav li a.active {
-  color: #fff;
-}
-
-@media (max-width: 1200px) {
-  .header-area .main-nav .nav li {
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #ff3333;
     padding-left: 10px;
-    padding-right: 10px;
-  }
-  .header-area .main-nav:before {
-    display: none;
-  }
+    letter-spacing: 2px;
 }
 
-@media (max-width: 992px) {
-  .header-area {
-    top: 0;
-  }
-  .header-area .main-nav {
-    background-color: transparent;
-    border-radius: 0px;
-  }
-  .header-area .main-nav .nav {
-    height: auto;
-    flex-basis: 100%;
-  }
-  .header-area .main-nav .logo {
-    position: absolute;
-    left: 30px;
-    top: 15px;
-  }
+/* ==================== GRID SYSTEM & CARD CONFIGURATION ==================== */
 
-  .header-area .main-nav .border-button {
-    position: absolute;
-    top: 15px;
-    right: 70px;
-  }
-  .header-area.header-sticky .nav li a:hover,
-  .header-area.header-sticky .nav li a.active {
-    color: #e75e8d!important;
-    opacity: 1;
-  }
-  .header-area.header-sticky .nav li.search-icon a {
-    width: 100%;
-  }
-  .header-area {
-    background-color: ##000000;
-    padding: 0px 15px;
-    height: 80px;
-    box-shadow: none;
-    text-align: center;
-  }
-  .header-area .container {
-    padding: 0px;
-  }
-  .header-area .logo {
-    margin-left: 0px;
-  }
-  .header-area .menu-trigger {
-    display: block !important;
-  }
-  .header-area .main-nav {
-    overflow: hidden;
-  }
-  .header-area .main-nav .nav {
-    float: none;
-    width: 100%;
-    display: none;
-    -webkit-transition: all 0s ease 0s;
-    -moz-transition: all 0s ease 0s;
-    -o-transition: all 0s ease 0s;
-    transition: all 0s ease 0s;
-    margin-left: 0px;
-  }
-  .header-area.header-sticky .nav {
-    margin-top: 65px !important;
-    text-align: center;
-  }
-
-  .header-area .main-nav .nav li:first-child {
-    border-top: 1px solid #eee;
-  }
-  .header-area .main-nav .nav li {
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .header-area .main-nav .nav li a {
-    height: 50px !important;
-    line-height: 50px !important;
-    padding: 0px !important;
-    border: none !important;
-    background: #fff !important;
-    color: #1e1e1e !important;
-  }
-  .header-area .main-nav .nav li a:hover {
-    background: #fff !important;
-    color: #e75e8d!important;
-  }
-
-  .header-area .main-nav .nav li.has-sub ul.sub-menu {
-    position: relative;
-    visibility: inherit;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    top: 0px;
-    width: 100%;
-    box-shadow: none;
-    height: 0px;
-    transition: all 0s;
-  }
-  .header-area .main-nav .nav li.submenu ul li a {
-    font-size: 12px;
-    font-weight: 400;
-  }
-  .header-area .main-nav .nav li.submenu ul li a:hover:before {
-    width: 0px;
-  }
-  .header-area .main-nav .nav li.has-sub ul.sub-menu {
-    height: auto;
-  }
-  .header-area .main-nav .nav li.has-sub:after {
-    color: #3B566E;
-    right: 30px;
-    font-size: 14px;
-    top: 15px;
-  }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
-    height: 0px;
-  }
-}
-
-/* 
----------------------------------------------
-Banner Style
---------------------------------------------- 
-*/
-
-.main-banner {
-  background-image: url(../images/banner.png);
-  background-position: center center;
-  background-size: cover;
-  min-height: 380px;
-  border-radius: 23px;
-  padding: 80px 60px;
-}
-
-.main-banner h6 {
-  font-size: 20px;
-  color: #fff;
-  font-weight: 400;
-  margin-bottom: 25px;
-}
-
-.main-banner h4 {
-  font-size: 45px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-
-.main-banner h4 em {
-  font-style: normal;
-  color: #60ecdc;
-}
-
-/* 
----------------------------------------------
-Most Popular Style
---------------------------------------------- 
-*/
-
-.most-popular {
-  margin-top: 60px;
-  padding: 30px;
-  background-color: #1f2122;
-  border-radius: 23px;
-}
-
-.most-popular .item {
-  background-color: #27292a;
-  padding: 30px 15px;
-  border-radius: 23px;
-  margin-bottom: 30px;
-}
-
-.most-popular .item .item {
-  padding: 0px;
-  border-radius: 0px;
-  background-color: transparent;
-  margin-bottom: 0px;
-}
-
-.most-popular .item img {
-  border-radius: 23px;
-}
-
-.most-popular .item h4 {
-  font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: 0px;
-  display: inline-block;
-}
-
-.most-popular .item span {
-  color: #666;
-  display: block;
-  margin-top: 7px;
-  font-weight: 400;
-}
-
-.most-popular .item ul {
-  float: right;
-  margin-top: 20px;
-}
-
-.most-popular .item ul li {
-  text-align: right;
-  color: #fff;
-  font-size: 14px;
-}
-
-.most-popular .item ul li:first-child i {
-  color: yellow;
-}
-
-.most-popular .item ul li:last-child i {
-  color: #ec6090;
-}
-
-/* 
----------------------------------------------
-Footer Style
---------------------------------------------- 
-*/
-
-footer p {
-  text-align: center;
-  padding: 30px 0px;
-  color: #fff;
-  font-weight: 300;
-}
-
-footer p a {
-  color: #fff;
-  transition: all .3s;
-}
-
-footer p a:hover {
-  color: #ec6090;
-}
-
-
-/* 
----------------------------------------------
-Responsive Style
---------------------------------------------- 
-*/
-
-body {
-  overflow-x: hidden;
-}
-
-@media (max-width: 767px) {
-  body .page-content {
-    padding: 30px 30px;
-  }
-  .main-banner {
-    text-align: center;
-  }
-  .main-banner h4 {
-    font-size: 35px;
-  }
-  .gaming-library .item ul li,
-  .gaming-library .item ul li:first-child,
-  .gaming-library .item ul li:last-child {
-    width: 100% !important;
-    text-align: center !important;
-  }
-  .gaming-library .item ul li {
-    margin-top: 30px;
-  }
-  .top-downloaded ul li .download i {
-    top: 20px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-  }
-  .top-downloaded ul li img {
-    margin-right: 10px;
-  }
-  .top-downloaded ul li span {
-    font-size: 14px;
-  }
-  .top-streamers,
-  .top-downloaded {
-    max-height: 100%;
-    min-height: 100%;
-  }
-  .most-popular .item .inner-item {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 992px) {
-  .header-area .main-nav #search {
-    display: none;
-  }
-  .heading-section h4 {
-    font-size: 20px;
-  }
-  .gaming-library .item ul li {
-    width: 48% !important;
-  }
-  .gaming-library .item ul li:last-child {
-    text-align: left;
-  }
-  .featured-games {
+/* Grid Utama Game */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     margin-bottom: 60px;
-  }
-  .start-stream .item {
-    margin: 15px 0px;
-  }
-  .feature-banner .thumb {
-    margin-top: 30px;
-  }
-  .main-profile .main-info {
-    margin: 45px 0px;
-  }
 }
 
-@media (max-width: 1200px) {
-  .header-area .main-nav .nav li {
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-  .header-area .main-nav .logo {
-    margin-right: 30px;
-    border-right: none;
-  }
-  .gaming-library .item ul li {
-    width: 16%;
-  }
+/* Mengubah Card Menjadi CSS Grid Bertingkat */
+.game-card {
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    
+    /* Grid 3 baris: Gambar, Info Teks (melar mengisi ruang), Tombol */
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
 }
 
-/* 
----------------------------------------------
-Privacy Policy Style
---------------------------------------------- 
-*/
-
-.contain p{
-  color: #b6b6b6;
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff3333;
 }
 
-.contain strong{
-  color: #fff;
+.game-image {
+    width: 100%;
+    height: 180px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-size: cover;
+    background-position: center;
 }
 
-.contain li{
-  list-style: circle;
-  color: #b6b6b6;
+/* Area Info / Teks Deskripsi */
+.game-info {
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.contain ul{
-  padding-left: 20px;
+.game-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.game-info p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.4;
+    margin-bottom: 0; /* Reset margin bawah agar pembagian tinggi grid 1fr akurat */
+}
+
+/* Area Kontainer Tombol */
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 20px 20px 20px; /* Padding dipindahkan ke bawah agar pas menempel */
+}
+
+/* ==================== BUTTONS CONFIGURATION ==================== */
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-steam { background-color: #1b2838; color: #c5c3c0; border: none; }
+.btn-steam:hover { background-color: #66c0f4; color: #fff; }
+.btn-itch { background-color: #fa5c5c; color: #fff; border: none; }
+.btn-itch:hover { background-color: #ff2424; }
+.btn-playstore { background-color: #202124; color: #a8c7fa; border: 1px solid #3c4043; }
+.btn-playstore:hover { background-color: #303134; color: #e8eaed; }
+
+/* REVISI UTAMA: Class untuk tombol yang tidak tersedia */
+.btn-disabled {
+    background-color: #1a1a1a;
+    color: #444;
+    border: 1px dashed #333;
+    cursor: not-allowed;
+    pointer-events: none; /* Membuat tombol tidak bisa diklik */
+}
+
+/* ========================================================================== */
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.social-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links a, .email-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover, .email-link:hover {
+    color: #ff3333;
+}
+
+.vhs-effect {
+    position: relative;
+    animation: vhs-flicker 0.15s infinite;
+}
+
+@keyframes vhs-flicker {
+    0% { opacity: 0.99; }
+    50% { opacity: 1; }
+    100% { opacity: 0.99; }
+}
+
+/* ==================== SCREEN OPTIMIZATION (RESPONSIVE) ==================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        gap: 20px;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    /* Ubah grid jadi 2 kolom di tablet / landscape HP */
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .game-card {
+        grid-template-rows: auto 1fr auto; /* Tetap pertahankan layout grid */
+    }
+
+    .game-image {
+        height: 110px;
+        font-size: 0.9rem;
+    }
+
+    .game-info {
+        padding: 10px 10px 5px 10px;
+    }
+
+    .game-info h3 {
+        font-size: 1rem;
+    }
+
+    .game-info p {
+        font-size: 0.75rem;
+        /* Batasi maksimal 3 baris deskripsi di HP agar hemat ruang */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .download-buttons {
+        padding: 0 10px 10px 10px;
+    }
+
+    .btn {
+        padding: 8px 5px;
+        font-size: 0.7rem;
+    }
+
+    .social-links {
+        gap: 8px 12px;
+    }
+    
+    .social-links a, .email-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* Layar HP Kecil */
+@media (max-width: 400px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom vertikal panjang */
+    }
 }
