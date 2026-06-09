@@ -102,7 +102,7 @@ h2 {
 
 .game-image {
     width: 100%;
-    height: 180px;
+    aspect-ratio: 16 / 9;
     background-color: #222;
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@ hr {
     }
 
     .game-image {
-        height: 110px;
+        /* height: 180px; */
         font-size: 0.9rem;
     }
 
